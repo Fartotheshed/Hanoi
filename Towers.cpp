@@ -6,6 +6,19 @@ using std::endl;
 #include <cstdlib>
 using namespace std;
 
+void towers(int n, int start, int middle, int end)
+{
+    if(n == 1){
+        cout << "Move disk " << n << " from peg " << start << " to peg " << end << endl;
+    }
+
+    else{
+        towers(n-1,start,end,middle);
+        towers(1,start,middle,end);
+        towers(n-1,middle,start,end);
+    }
+};
+
 int main(int argc, char *argv[]){
     static struct option long_opts[] = {
         {"start", required_argument, 0, 's'},
@@ -35,18 +48,7 @@ int main(int argc, char *argv[]){
         }
     }
 
+    towers(5, 1, 2, 3);
+
     return 0;
-};
-
-void towers(int n, int start, int middle, int end)
-{
-    if(n == 1){
-        cout << "Move disk" << n << "from" << start << "to" << end << endl;
-    }
-
-    else{
-        towers(n-1,start,end,middle);
-        towers(1,start,middle,end);
-        towers(n-1,middle,start,end);
-    }
 };
