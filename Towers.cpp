@@ -46,6 +46,6 @@ void towers(int n, int start, int middle, int end)
     else{
         towers(n-1,start,end,middle);
         towers(1,start,middle,end);
-        towers(n-1,middle,beginning,end);
+        towers(n-1,middle,start,end);
     }
 };
