@@ -42,7 +42,3 @@ while ((c = getopt_long(argc, argv, "s:e:n:", long_opts, &opt_index)) != -1) {
 
 
 void towers(int n, int start, int mid
-
-
-
-
