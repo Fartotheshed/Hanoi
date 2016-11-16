@@ -41,4 +41,13 @@ while ((c = getopt_long(argc, argv, "s:e:n:", long_opts, &opt_index)) != -1) {
 
 
 
-void towers(int n, int start, int mid
+void towers(int n, int start, int middle int end)
+{
+  if(n == 1) {
+      cout << "Move disk" << n << "from" << start << "to" << end << endl;
+  }
+  else() {
+      towers(n-1,start,end,middle);
+      towers(1,start,middle,end);
+      towers(n-1,middle,beginning,end);
+  }
